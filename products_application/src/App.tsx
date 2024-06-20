@@ -16,6 +16,7 @@ function App() {
     <>
       <Routes>
         <Route path='/'>
+          
           <Route path='/' element={ 
             <Layout 
               header={<Header/>}
@@ -24,9 +25,33 @@ function App() {
               content={<Home/>} 
               footer={<Footer/>} /> }>
           </Route>
-          <Route path='about' element={ <About/> }></Route>
-          <Route path='products' element={ <Product/> }></Route>
-          <Route path='*' element={ <Error/> }></Route>
+
+          <Route path='products' element={ 
+            <Layout 
+              header={<Header/>}
+              breadCrumb={<BreadCrumb/>}
+              sideBar={<SideBar/>}
+              content={<Product/>} 
+              footer={<Footer/>} /> }>
+          </Route>
+
+          <Route path='about' element={ 
+            <Layout 
+              header={<Header/>}
+              breadCrumb={<BreadCrumb/>}
+              sideBar={<SideBar/>}
+              content={<About/>} 
+              footer={<Footer/>} /> }>
+          </Route>
+
+          <Route path='*' element={ 
+            <Layout 
+              header={<Header/>}
+              breadCrumb={<BreadCrumb/>}
+              content={<Error/>} 
+              footer={<Footer/>} /> }>
+          </Route>
+
         </Route>
       </Routes>
     </>
